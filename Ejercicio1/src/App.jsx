@@ -1,121 +1,48 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import { useState } from "react";
+import "./App.css";
+import Alert from "./components/Alert";
+import Carousel from "./components/Carousel";
+import Navbar from "./components/navbar";
+import Cards from "./components/cards";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+          <Navbar></Navbar>
 
-      <div className="ticks"></div>
+      <h1 className="color-black">Bienvenido a mi Portafolio Web</h1>
+      {/*<Alert titulo={"Esta es una alerta"}></Alert>*/}
+      <Carousel
+        img1={"https://global.tiffin.edu/img/article/cuales-son-las-etapas-del-desarrollo-de-software.webp"}
+        img2={"https://www.universitatcarlemany.com/sites/universitatcarlemany.com/files/images/imageye___-_imgi_73_metodologias-de-desarrollo-de-software-ucma-1.jpg"}
+        img3={"https://web-assets.esetstatic.com/tn/-x700/wls/2023/2023-12/desarrollo-software.jpeg"}
+      ></Carousel>
+      <h1 className="color-black">Tecnologías</h1>
+      <br />
+      <h2 className="color-black2">FrontEnd</h2>
+      <Cards img={"https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1280px-HTML5_logo_and_wordmark.svg.png"}caption={"HTML5"}></Cards>
+      <Cards img={"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/960px-CSS3_logo_and_wordmark.svg.png"}caption={"CSS3"}></Cards>
+      <Cards img={"https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/330px-Unofficial_JavaScript_logo_2.svg.png"}caption={"JavaScript"}></Cards>
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+      <br />
+      <h2 className="color-black2">Backend</h2>
+      <Cards img={"https://education.oracle.com/file/general/p-80-java.png"}caption={"Java"}></Cards>
+      <Cards img={"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/1280px-Node.js_logo.svg.png"}caption={"Node JS"}></Cards>
+      
+      <h2 className="color-black2">Almacenamiento de Datos</h2>
+      <h3 className="color-black3">Motores</h3>
+      <Cards img={"https://mvpcluster.com/wp-content/uploads/2016/04/sql-server-1.png"}caption={"Sql Server"}></Cards>
+      <Cards img={"https://agilesparks.com/wp-content/uploads/2022/08/MongoDB_Logo.svg_.png"}caption={"MongoDB"}></Cards>
+      <h3 className="color-black3">Herramientas de Gestión</h3>
+      <Cards img={"https://www.kenwalger.com/twitter_cards/mongodb-compass.png"}caption={"Mongo DB Compass"}></Cards>
+      <Cards img={"https://i.pinimg.com/originals/32/a0/3a/32a03aee0c76419ec5bde950a62883bc.png"}caption={"Sql Server Management Studio"}></Cards>
+      <Cards img={"https://upload.wikimedia.org/wikipedia/en/6/68/Oracle_SQL_Developer_logo.svg"}caption={"Sql Developer"}></Cards>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
+
     </>
-  )
+  );
 }
 
-export default App
+export default App;
